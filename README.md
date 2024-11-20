@@ -1,2 +1,3 @@
-### Js Practice
-# JavaScript Training Code
+# Js Practice
+## JavaScript Training Code
+### All JS exercises
