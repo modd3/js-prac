@@ -1,4 +1,4 @@
-const Prompt = require('../models/Prompt');
+const Prompt = require('../models/prompt');
 
 // Get all prompts
 const getPrompts = async (req, res) => {
