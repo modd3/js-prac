@@ -7,7 +7,7 @@ const hf = new HfInference(process.env.HUGGING_TOKEN);
 const generateResponse = async (prompt) => {
     try {
         const response = await hf.textGeneration({
-            model: "gpt2", // Replace with your chosen model
+            model: "mistral-tiny", // Replace with your chosen model
             inputs: prompt,
             parameters: {
                 max_length: 100, // Limit the response length
