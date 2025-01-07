@@ -1,5 +1,5 @@
 .vscode
-
+./ai-prompt-builder/ai-prompt-builder-backend
 .env
 
 # Logs
