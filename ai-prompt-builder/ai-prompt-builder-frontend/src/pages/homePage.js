@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchPrompts } from "../api/api";
 import PromptList from "../components/promptList";
 
+
 const Home = () => {
   const [prompts, setPrompts] = useState([]);
 
