@@ -25,7 +25,10 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Prompts</h1>
+      <h1 className="display-4 text-center">Welcome to AI Prompt Builder</h1>
+      <p className="lead text-center">
+        Create and test your AI prompts with ease using our platform.
+      </p>
 
       {/* Filter by category */}
       <div className="mb-3">
