@@ -14,12 +14,12 @@ const CreatePrompt = () => {
         e.preventDefault();
         try {
             await createPrompt({ title, template, category });
-            setSuccessMessage('Prompt created successfully!');
+            setSuccessMessage('Prompt created successfully!\n Navigating to Home...');
             
             // Scroll to the success message
             setTimeout(() => {
                 successMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
+            }, 300);
 
             // Redirect to home page after a delay
             setTimeout(() => {
