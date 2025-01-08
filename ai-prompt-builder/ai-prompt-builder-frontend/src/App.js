@@ -8,11 +8,13 @@ import TestPromptPage from "./pages/testPromptPage";
 const App = () => (
   <Router>
     <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/create" element={<CreatePromptPage />} />
-      <Route path="/test" element={<TestPromptPage />} />
-    </Routes>
+    <div className="container my-5"> {/* Bootstrap container for proper spacing */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreatePromptPage />} />
+        <Route path="/test" element={<TestPromptPage />} />
+      </Routes>
+    </div>
   </Router>
 );
 

@@ -1,54 +1,44 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import { fetchPrompts } from "../api/api";
 
 const PromptTester = () => {
-  const [prompt, setPrompt] = useState('');
-  const [response, setResponse] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
 
-  const handlePromptSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setResponse('');
-
+  const handleTestPrompt = async () => {
     try {
-      const { data } = await axios.post('http://localhost:5000/api/hugface', { prompt });
-      setResponse(data.response || 'No response received');
-    } catch (err) {
-      setError(err.response?.data?.error || 'An error occurred while fetching the response');
-    } finally {
-      setLoading(false);
+      const res = await fetchPrompts(prompt);
+      setResponse(res.data.response);
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
   return (
-    <div>
-      <h1>AI Prompt Tester</h1>
-      <form onSubmit={handlePromptSubmit}>
+    <div className="container">
+      <h2>Test Your Prompt</h2>
+      <div className="mb-3">
+        <label htmlFor="prompt" className="form-label">
+          Enter Prompt
+        </label>
         <textarea
+          id="prompt"
+          className="form-control"
+          rows="4"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your prompt here..."
-          rows="5"
-          cols="50"
+          placeholder="Type your prompt here"
         />
-        <br />
-        <button type="submit" disabled={loading}>
-          {loading ? 'Generating...' : 'Submit Prompt'}
-        </button>
-      </form>
-      <div>
-        {loading && <p>Loading response...</p>}
-        {response && (
-          <div>
-            <h3>AI Response:</h3>
-            <p>{response}</p>
-          </div>
-        )}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
+      <button onClick={handleTestPrompt} className="btn btn-success">
+        Test Prompt
+      </button>
+      {response && (
+        <div className="mt-4">
+          <h5>AI Response:</h5>
+          <p>{response}</p>
+        </div>
+      )}
     </div>
   );
 };
