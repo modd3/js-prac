@@ -15,9 +15,9 @@ const PromptList = () => {
     return (
         <div>
             <h2>Saved Prompts</h2>
-            <ul>
+            <ul className="list-group">
                 {prompts.map((prompt) => (
-                    <li key={prompt._id}>
+                    <li className="list-group-item" key={prompt._id}>
                         <h3>{prompt.title}</h3>
                         <p>{prompt.template}</p>
                         <small>Category: {prompt.category}</small>
