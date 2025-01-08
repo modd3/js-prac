@@ -24,22 +24,24 @@ const PromptTester = () => {
   };
 
   return (
-    <div>
-      <h1>AI Prompt Tester</h1>
+    <div className="container">
+    <h2>Test Your Prompt</h2>
       <form onSubmit={handlePromptSubmit}>
         <textarea
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Enter your prompt here..."
-          rows="5"
-          cols="50"
+          id="prompt"
+          className="form-control"
+          rows="4"
+          cols="30"
         />
         <br />
-        <button type="submit" disabled={loading}>
+        <button className="btn btn-success" type="submit" disabled={loading}>
           {loading ? 'Generating...' : 'Submit Prompt'}
         </button>
       </form>
-      <div>
+      <div className="mt-4">
         {loading && <p>Loading response...</p>}
         {response && (
           <div>

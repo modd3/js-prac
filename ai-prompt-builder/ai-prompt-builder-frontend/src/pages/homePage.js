@@ -16,7 +16,12 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Prompt List</h1>
+      <div className="container my-5">
+      <h1 className="display-4 text-center">Welcome to AI Prompt Builder</h1>
+      <p className="lead text-center">
+        Create and test your AI prompts with ease using our platform.
+      </p>
+      </div>
       <PromptList prompts={prompts} />
     </div>
   );

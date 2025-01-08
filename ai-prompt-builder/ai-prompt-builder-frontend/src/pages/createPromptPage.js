@@ -10,7 +10,6 @@ const CreatePromptPage = () => {
 
   return (
     <div>
-      <h1>Create a New Prompt</h1>
       <CreatePrompt onSubmit={handleCreatePrompt} />
     </div>
   );
