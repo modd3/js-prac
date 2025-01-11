@@ -114,7 +114,7 @@ const HomePage = () => {
                 <div className="mt-2">
                   {response && (
                     <div>
-                      <h5>AI Response:</h5>
+                      <h5 className='text-secondary'>AI Response:</h5>
                       <p>{response}</p>
                     </div>
                   )}
