@@ -2,11 +2,12 @@ import React from "react";
 import PromptTester from "../components/promptTest";
 
 const TestPromptPage = () => {
-    return (
-      <div className="App">
+
+  return (
+    <div className="App">
         <PromptTester />
-      </div>
-    );
-  }
+    </div>
+  );
+};
 
 export default TestPromptPage;

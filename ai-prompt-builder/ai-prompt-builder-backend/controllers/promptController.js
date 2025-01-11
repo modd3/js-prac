@@ -33,4 +33,19 @@ const createPrompt = async (req, res) => {
     }
 };
 
-module.exports = { getPrompts, createPrompt };
+// Get a single prompt by ID
+const getPromptById = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const prompt = await Prompt.findById(id);
+      if (!prompt) {
+        return res.status(404).json({ error: "Prompt not found" });
+      }
+      res.status(200).json(prompt);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  };
+  
+  module.exports = { getPrompts, createPrompt, getPromptById };
+  
